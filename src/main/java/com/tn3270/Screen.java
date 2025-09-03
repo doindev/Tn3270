@@ -709,6 +709,10 @@ public class Screen {
         attributes[normalizePosition(position)] = attr;
     }
     
+    byte getAttribute(int position) {
+        return attributes[normalizePosition(position)];
+    }
+    
     void setField(int position, Field field) {
         fields[normalizePosition(position)] = field;
     }

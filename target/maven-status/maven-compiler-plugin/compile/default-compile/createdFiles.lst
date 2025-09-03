@@ -1,0 +1,16 @@
+com\tn3270\ui\ScreenUI$KeyListener.class
+com\tn3270\Screen.class
+com\tn3270\TerminalType.class
+com\tn3270\ui\ScreenUI$KeyEvent$KeyCode.class
+com\tn3270\Field.class
+com\tn3270\Tn3270.class
+com\tn3270\AIDKey.class
+com\tn3270\Screen$UIKeyListener.class
+com\tn3270\DataStreamProcessor.class
+com\tn3270\ui\ScreenUI$KeyEvent.class
+com\tn3270\DataStreamBuilder.class
+com\tn3270\TelnetStream.class
+com\tn3270\Tn3270$1.class
+com\tn3270\Tn3270$DataStreamReader.class
+com\tn3270\ui\ScreenUI.class
+com\tn3270\Screen$1.class

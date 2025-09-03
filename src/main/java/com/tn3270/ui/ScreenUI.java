@@ -11,7 +11,7 @@ public interface ScreenUI {
     
     void clearScreen();
     
-    void highlightField(int start, int end, boolean protected);
+    void highlightField(int start, int end, boolean isProtected);
     
     void setStatusMessage(String message);
     

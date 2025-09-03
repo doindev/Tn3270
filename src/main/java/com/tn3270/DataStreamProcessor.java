@@ -8,7 +8,7 @@ public class DataStreamProcessor {
     private static final byte CMD_WRITE = (byte) 0xF1;
     private static final byte CMD_ERASE_WRITE = (byte) 0xF5;
     private static final byte CMD_ERASE_WRITE_ALTERNATE = (byte) 0x7E;
-    private static final byte CMD_ERASE_ALL_UNPROTECTED = (byte) 0xF2;
+    private static final byte CMD_ERASE_ALL_UNPROTECTED = (byte) 0x6F;
     private static final byte CMD_READ_BUFFER = (byte) 0xF2;
     private static final byte CMD_READ_MODIFIED = (byte) 0xF6;
     private static final byte CMD_READ_MODIFIED_ALL = (byte) 0x6E;
@@ -240,8 +240,9 @@ public class DataStreamProcessor {
         int start = currentBufferPosition;
         
         for (int i = (start + 1) % screen.getBufferSize(); i != start; i = (i + 1) % screen.getBufferSize()) {
+            final int position = i;
             Field field = screen.getFields().stream()
-                    .filter(f -> f != null && f.getStart() == i && !f.isProtected())
+                    .filter(f -> f != null && f.getStart() == position && !f.isProtected())
                     .findFirst()
                     .orElse(null);
             
@@ -285,8 +286,9 @@ public class DataStreamProcessor {
     
     private void processEraseAllUnprotected() {
         for (int i = 0; i < screen.getBufferSize(); i++) {
+            final int position = i;
             Field field = screen.getFields().stream()
-                    .filter(f -> f != null && f.contains(i))
+                    .filter(f -> f != null && f.contains(position))
                     .findFirst()
                     .orElse(null);
             
